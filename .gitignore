@@ -1,0 +1,17 @@
+.DS_Store
+.venv/
+.python/
+.uv-cache/
+.cache/
+.research/
+.tmp/
+__pycache__/
+*.py[cod]
+.tools/
+.gh-config/
+.github_token
+.pytest_cache/
+output/
+logs/
+models/demucs/*.th
+models/demucs/*.part

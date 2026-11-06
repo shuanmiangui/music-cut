@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "musiccut"
+version = "1.0.0"
+description = "Local, high-quality five-stem music separator for video editing"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+dependencies = [
+  "demucs==4.1.0",
+  "torch==2.15.0",
+  "numpy==2.5.4",
+  "soundfile==0.14.0",
+  "soxr==1.1.0",
+  "imageio-ffmpeg==0.8.1",
+]
+
+[project.scripts]
+musiccut = "musiccut.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["musiccut"]
+
+[tool.uv]
+# Keep the project virtualenv self-contained inside this folder.
+python-preference = "only-managed"
+# This checkout ships an Apple Silicon .app launcher and a local MPS setup.
+environments = ["sys_platform == 'darwin' and platform_machine == 'arm64'"]

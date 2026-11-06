@@ -1,0 +1,10 @@
+#!/bin/bash
+set -euo pipefail
+APP_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$APP_DIR"
+if [ ! -x ".venv/bin/python" ]; then
+  echo "Music Cut 尚未安装或 .venv 不完整。"
+  echo "请先双击 setup.command 完成安装。"
+  exit 1
+fi
+exec ".venv/bin/python" -m musiccut "$@"

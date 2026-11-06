@@ -1,0 +1,4 @@
+*.icns binary
+*.png binary
+*.th binary
+"Music Cut.app/**" binary
