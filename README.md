@@ -191,6 +191,7 @@ Demucs 官方的 6-source 模型是实验性的。官方文档也明确说明：
 | 现象 | 处理 |
 | --- | --- |
 | 双击 `.app` 没反应 | 用右键 → 打开；或运行 `Music Cut.command` 查看终端错误 |
+| 下载 ZIP 解压后脚本/启动器不能执行 | `chmod +x setup.command "Music Cut.app/Contents/MacOS/MusicCut"`；更推荐 `git clone` |
 | GPU / MPS 报错 | 程序会自动回退 CPU；CLI 可显式加 `--device cpu` |
 | 提示模型下载失败 | 检查网络；模型文件应位于 `models/demucs/`，也可重新运行 `setup.command` |
 | 输出目录权限错误 | 在 GUI 里点“更改…”换到用户目录，如 `~/Movies/项目/音频` |
